@@ -75,9 +75,13 @@
                     <div>
                         <font-awesome-icon :icon="hide?'fa-solid fa-xmark':'fa-solid fa-bars'" v-on:click="toggle" />
                     </div>
-                    <div class="h-[40px] bg-dark w-[40px] rounded-full">
-
+                    <div class="flex items-center">
+                        <p class="px-3">{{userName}}</p>
+                        <div class="h-[40px]  w-[40px] ">
+                        <img :src="avatar" class="h-[40px] rounded-full" alt="">
                     </div>
+                    </div>
+                    
                 </nav>
                 <div class="main-content-section p-4">
                     <router-view></router-view>
@@ -90,12 +94,22 @@
 <script >
 import authControllers from '../api/Authuser'
 import authUser from '@/services/auth'
+import {profileName} from '@/Utils/index'
+import {profileAvatar} from '@/Utils/index'
+import {useAuthStore} from '@/Stores/user'
+
 export default {
     name: 'Dashboard',
-    
+    setup(){
+       const userStore = localStorage.getItem("userInfo")
+       return useAuthStore().login(JSON.parse(userStore));
+       
+    },
     data() {
         return {
             hide: false,
+            userName:profileName(),
+            avatar:profileAvatar()
         }
     },
     methods: {

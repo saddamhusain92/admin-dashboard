@@ -14,7 +14,8 @@
 <div :class=" btn?'hide-btn':''">
 <router-link to="/login"><button class="login-btn">Login</button></router-link>
 </div>
-<div :class=" btn?'':'hide-btn'">
+<div :class=" btn?'flex justify-center items-center':'hide-btn'">
+  <p>{{userName}}</p>
 <button class="login-btn" v-on:click="naviGate()">Logout</button>
 </div>
 
@@ -25,13 +26,21 @@
   <script>
   import authUser from '@/services/auth'
   import authControllers from '@/api/Authuser'
+  import {profileName} from '@/Utils/index'
+  import {useAuthStore} from '@/Stores/user'
   export default {
     name: 'NaviGation',
+    setup(){
+       const userStore = localStorage.getItem("userInfo")
+       return useAuthStore().login(JSON.parse(userStore));
+       
+    },
     data(){
             return{
                 authLabel:authUser()?"Logout":"Login",
                 btn:authUser(),
-                hide:window.location.pathname
+                hide:window.location.pathname,
+                userName:authUser()?profileName():""
             }
       },
       methods:{

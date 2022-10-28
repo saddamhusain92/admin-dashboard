@@ -19,6 +19,7 @@
 <script>
 import authControllers from '../../api/Authuser'
 import authUser from '@/services/auth'
+import {useAuthStore} from '@/Stores/user'
 export default {
     name: 'Login',
     data() {
@@ -35,11 +36,12 @@ export default {
       naviGate() { 
             authControllers.login(this.body).then((res)=>{
                 if(res.data.status==200){
-                    localStorage.setItem('userInfo',JSON.stringify(res.data.user))
-                   // this.$router.push({name:"Dashboard"})
+                    // this.$router.push({name:"Dashboard"})
                     window.location.href='/v-admin'
                     this.error=""
                     this.info = "You are successfully logged in"
+                    const userStore = localStorage.setItem('userInfo',JSON.stringify(res.data.user))
+                    useAuthStore().login(JSON.parse(userStore));
                     // console.log("You are successfully logged in");
                 }
                 else{
