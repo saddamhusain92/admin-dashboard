@@ -4,7 +4,7 @@
     &#60;Vue Js&#62;
   </div>
 <div>
-<ul class="list-none navLinnk">
+<ul class="list-none navLinnk sm:hidden">
 <li><router-link to="/">Home</router-link></li>
 <li><router-link to="/about">About</router-link></li>
 <li><router-link to="/service">Services</router-link></li>

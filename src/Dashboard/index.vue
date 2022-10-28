@@ -87,12 +87,12 @@
         </div>
     </div>
 </template>
-<script>
+<script >
 import authControllers from '../api/Authuser'
 import authUser from '@/services/auth'
-
 export default {
     name: 'Dashboard',
+    
     data() {
         return {
             hide: false,

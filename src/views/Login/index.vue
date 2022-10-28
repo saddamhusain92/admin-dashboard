@@ -1,8 +1,9 @@
 <template>
     <div class=" flex justify-center items-center h-[100vh]">
         <div class="login-wrapper w-[320px]">
-            <small class="text-red">{{error}}</small>
-            <small class="text-vbase">{{info}}</small>
+           
+            <div :class="error.length>0?'bg-red h-[50px] flex justify-center items-center text-light rounded-sm':''">{{error}}</div>
+            <div :class="info.length>0?'bg-vbase h-[50px] flex justify-center items-center text-light rounded-sm':''">{{info}}</div>
             <div class="input-group border border-vbase">
                 <input type="email" placeholder="Enter your Email" class="h-[35px] w-full px-2" v-model="body.email"/>
             </div>

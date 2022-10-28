@@ -19,7 +19,7 @@ module.exports = {
       black: 900,
     },
     screens: {
-      'sm': {'min': '120px', 'max': '767px'},
+      'sm': {'min': '420px', 'max': '767px'},
       // => @media (min-width: 640px and max-width: 767px) { ... }
 
       'md': {'min': '768px', 'max': '1523px'},
