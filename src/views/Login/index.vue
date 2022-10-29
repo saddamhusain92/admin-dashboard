@@ -24,6 +24,9 @@ export default {
     name: 'Login',
     data() {
         return {
+           formVail:{
+            error:""
+           },
            info:"",
            error:"",
            body:{

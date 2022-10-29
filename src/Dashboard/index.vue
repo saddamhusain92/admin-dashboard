@@ -78,7 +78,7 @@
                     <div class="flex items-center">
                         <p class="px-3">{{userName}}</p>
                         <div class="h-[40px]  w-[40px] ">
-                        <img :src="avatar" class="h-[40px] rounded-full" alt="">
+                            <img :src="avatar.length>20?avatar:'https://lh6.googleusercontent.com/proxy/zXJlC6hnhowxVCwgjCk_RMHeNOlUlbhX9tY2QSfbLJFPHH3AZsrl_CsmRxJ9eKBF-IRKQ6uDpMYZbW8G2ULzgMyTM81Wixg9slAnZnBRDRkeQ3BbyMCSWA5sg3ZPjZZP6cvmA8Xd8Q-PwwOBdxZi8ur9jQHcov2aOcpR45bOPJHbfWiz7pUV1smEw_nuALm5PAykqLT1QFBEplUjfAoZrTfocDC7Yz8Akui266AdP1oGzKl92j9vQLqYu1_FWI0neueNxwH7OAz9ptX7coXP8FKjErj9uRstCNA=w1200-h630-p-k-no-nu'" class="rounded-[50%]"  alt="profile"/>
                     </div>
                     </div>
                     
